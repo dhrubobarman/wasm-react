@@ -14,7 +14,6 @@ const App = () => {
   const calculate = (_values: [number, number] = values) => {
     const add = module?.add(_values[0], _values[1]) || 0;
     const sub = module?.subtract(_values[0], _values[1]) || 0;
-
     setResult({ add, sub });
   };
 

@@ -1,27 +1,5 @@
 import { useEffect, useState } from "react";
 
-export interface BaseWASMModule {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-  _malloc: Function;
-  HEAPU8: Uint8Array;
-}
-
-const useWASM = <T>(
-  helperOutput: (
-    Module?: unknown,
-    ...args: unknown[]
-  ) => Promise<BaseWASMModule & T>
-) => {
-  const [methods, setMethods] = useState<(BaseWASMModule & T) | null>(null);
-
-  helperOutput().then((m) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    !methods && setMethods(m);
-  });
-
-  return methods;
-};
-
 export const useWasm = <T>({
   wrapper,
   binaryLink,
@@ -44,5 +22,3 @@ export const useWasm = <T>({
 
   return methods;
 };
-
-export default useWASM;
