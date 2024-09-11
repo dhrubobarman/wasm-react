@@ -1,12 +1,12 @@
 // quick_example.cpp
 #include <emscripten/bind.h>
 
-int add(int a, int b)
+float add(float a, float b)
 {
     return a + b;
 }
 
-int subtract(int a, int b)
+float subtract(float a, float b)
 {
     return a - b;
 }

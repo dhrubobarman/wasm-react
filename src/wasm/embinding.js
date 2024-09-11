@@ -1,5 +1,4 @@
 // prettier-ignore
-
 var Module = (() => {
   var _scriptName = typeof document != 'undefined' ? document.currentScript?.src : undefined;
   
